@@ -1,0 +1,155 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "AgenticAIStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AgenticAIStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AgenticAIStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "AgenticAIStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/85722279ff63d28480af6f90faa09acc6d0a57fd770bc9ca3d09ec1820dc6676.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AgenticAIStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "AgenticAIStack.assets"
+      ],
+      "metadata": {
+        "/AgenticAIStack/DocumentBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DocumentBucketAE41E5A9"
+          }
+        ],
+        "/AgenticAIStack/WorkingMemoryTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WorkingMemoryTable9B2263B1"
+          }
+        ],
+        "/AgenticAIStack/EpisodicMemoryTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EpisodicMemoryTableE6102F7E"
+          }
+        ],
+        "/AgenticAIStack/SemanticMemoryTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SemanticMemoryTable7DCB3776"
+          }
+        ],
+        "/AgenticAIStack/AgentExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AgentExecutionRole8AD76C36"
+          }
+        ],
+        "/AgenticAIStack/AgentExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AgentExecutionRoleDefaultPolicyF9CB1199"
+          }
+        ],
+        "/AgenticAIStack/SupervisorAgent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SupervisorAgent7CBC906A"
+          }
+        ],
+        "/AgenticAIStack/PerceptionAgent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PerceptionAgentD1B7CA76"
+          }
+        ],
+        "/AgenticAIStack/AnalysisAgent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AnalysisAgentBDA793BC"
+          }
+        ],
+        "/AgenticAIStack/ActionAgent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActionAgent9EB5E5A0"
+          }
+        ],
+        "/AgenticAIStack/AgentEventBus/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AgentEventBusB8B466DF"
+          }
+        ],
+        "/AgenticAIStack/DocumentProcessingWorkflow/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DocumentProcessingWorkflowRoleFA1146D8"
+          }
+        ],
+        "/AgenticAIStack/DocumentProcessingWorkflow/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DocumentProcessingWorkflowRoleDefaultPolicyA587CC4C"
+          }
+        ],
+        "/AgenticAIStack/DocumentProcessingWorkflow/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DocumentProcessingWorkflow9928DDBC"
+          }
+        ],
+        "/AgenticAIStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AgenticAIStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/AgenticAIStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AgenticAIStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AgenticAIStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

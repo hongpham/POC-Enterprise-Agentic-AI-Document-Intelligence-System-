@@ -9,6 +9,7 @@ from aws_cdk import (
     aws_iam as iam,
     aws_events as events,
     aws_stepfunctions as sfn,
+    aws_stepfunctions_tasks as tasks,
     Duration
 )
 
@@ -96,19 +97,19 @@ class AgenticAIStack(Stack):
     def create_workflow_state_machine(self):
         """Create Step Functions workflow for document processing"""
         # Define workflow steps
-        perception_task = sfn.LambdaInvoke(
+        perception_task = tasks.LambdaInvoke(
             self, "DocumentPerception",
             lambda_function=self.perception_agent,
             output_path="$.Payload"
         )
         
-        analysis_task = sfn.LambdaInvoke(
+        analysis_task = tasks.LambdaInvoke(
             self, "DocumentAnalysis", 
             lambda_function=self.analysis_agent,
             output_path="$.Payload"
         )
         
-        action_task = sfn.LambdaInvoke(
+        action_task = tasks.LambdaInvoke(
             self, "ActionExecution",
             lambda_function=self.action_agent,
             output_path="$.Payload"

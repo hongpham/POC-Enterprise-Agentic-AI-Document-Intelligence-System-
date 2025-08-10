@@ -40,6 +40,9 @@ pip install -r requirements.txt
 
 ### 2. Deploy Infrastructure
 ```bash
+# Activate Python virtual environment
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 # Make deployment script executable
 chmod +x deploy.sh
 
