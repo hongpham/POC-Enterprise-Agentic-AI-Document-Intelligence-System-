@@ -79,3 +79,19 @@ Technology: Lambda, API Gateway, CloudTrail
 - Advanced reasoning with memory retention
 - Enterprise-grade reliability and security
 - Performance evaluation and optimization
+
+## Testing the System
+
+After deployment, verify the system works correctly:
+
+### Quick Verification
+```bash
+python3 test_deployment.py
+```
+
+### End-to-End Testing
+1. Upload test document to S3 bucket
+2. Trigger Step Functions workflow via AWS Console
+3. Monitor execution and check results in DynamoDB
+
+See [TESTING.md](TESTING.md) for detailed testing instructions.
